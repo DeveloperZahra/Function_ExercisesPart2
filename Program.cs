@@ -45,8 +45,19 @@ namespace Function_ExercisesPart2
            return fahrenheit = (celsius * 9 / 5) + 32;
         }
 
-       
-                static void Main(string[] args)
+        public static double SimpleDiscountCalculator(double price, double discount, double finalPrice)
+        {
+            if (price > 100)
+            {
+                return discount = (price / 100) * 10;
+            }
+            else
+            {
+                return finalPrice = price - discount;
+            }
+
+        }
+        static void Main(string[] args)
                 {
                     Console.WriteLine("Welcome to program menu \n 1. Check Even or Odd: \n 2. The Largest number is:  \n 3. Temperature in Fahrenheit: \n" +
                         " 4. the price of the item is: \n 5.The student's grade is:\n 6.Number after swapping:\n 7. Days to Weeks and Days Converter:\n" +
@@ -84,7 +95,15 @@ namespace Function_ExercisesPart2
                             string result3 = TemperatureConverter(celsius, fahrenheit).ToString();
                             printValue(result3);
                             break;
-               
+                case 4:
+                    Console.Write("enter the price of the item ");
+                    double price = double.Parse(Console.ReadLine());
+                    double discount = double.Parse(Console.ReadLine());
+                    double finalPrice = double.Parse(Console.ReadLine());
+                    string result4 = SimpleDiscountCalculator(price, discount, finalPrice).ToString();
+                    printValue(result4);
+                    break;
+
                 default:
 
                             break;

@@ -122,6 +122,27 @@ namespace Function_ExercisesPart2
             return message;
         }
 
+        //--------Electricity Bill Calculator (8)--------
+        public static double ElectricityBillCalculator(double input)
+        {
+            double bill;
+
+            if (input <= 100)
+            {
+                bill = 0.5 * input;
+            }
+            else if (input <= 300)
+            {
+                bill = 0.75 * input;
+            }
+            else
+            {
+                bill = 1 * input;
+            }
+
+            return bill;
+        }
+
 
         static void Main(string[] args)
         {
@@ -203,6 +224,21 @@ namespace Function_ExercisesPart2
                         printValue(result7);
 
                         break;
+                    case 8:
+
+                        double units;
+                        Console.WriteLine("Enter the number of your consumed:");
+                        units = double.Parse(Console.ReadLine());
+
+                        double result8 = ElectricityBillCalculator(units);
+                        printValue(result8);
+
+                        break;
+
+
+
+
+
                     default:
                         Console.WriteLine("Wrong Choice!");
                         break;

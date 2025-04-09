@@ -57,6 +57,22 @@ namespace Function_ExercisesPart2
             }
 
         }
+        public static int GradingSystem(int score, char grade)
+        {
+            if (score >= 90)
+                grade = 'A';
+            else if (score >= 80)
+                grade = 'B';
+            else if (score >= 70)
+                grade = 'C';
+            else if (score >= 60)
+                grade = 'D';
+            else
+                grade = 'F';
+
+            return grade;
+        }
+
         static void Main(string[] args)
                 {
                     Console.WriteLine("Welcome to program menu \n 1. Check Even or Odd: \n 2. The Largest number is:  \n 3. Temperature in Fahrenheit: \n" +
@@ -102,6 +118,13 @@ namespace Function_ExercisesPart2
                     double finalPrice = double.Parse(Console.ReadLine());
                     string result4 = SimpleDiscountCalculator(price, discount, finalPrice).ToString();
                     printValue(result4);
+                    break;
+                case 5:
+                    Console.Write("enter the student's score ");
+                    int score = int.Parse(Console.ReadLine());
+                    char grade = char.Parse(Console.ReadLine());
+                    string result5 = GradingSystem(score, grade).ToString();
+                    printValue(result5);
                     break;
 
                 default:

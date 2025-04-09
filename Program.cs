@@ -1,4 +1,6 @@
-﻿namespace Function_ExercisesPart2
+﻿using System.ComponentModel.Design;
+
+namespace Function_ExercisesPart2
 {
     internal class Program
     {
@@ -12,6 +14,29 @@
                 return "Even";
             else
                 return "Odd";
+        }
+
+        public static int largestNumber(int num1 , int num2, int num3)
+        {
+            
+            int largest = num1;
+
+            if (largest > num2)
+            {
+                if (largest > num3)
+                   largest = num1;
+            }
+            else
+            {
+                largest = num2;
+
+                if (largest > num3)
+                    largest = num2;
+                else
+                     largest = num3;
+
+            }
+            return largest;
         }
         static void Main(string[] args)
         {
@@ -31,7 +56,17 @@
                     break;
 
                 case 2:
-                    
+                    Console.WriteLine(" Enter the first number: ");
+                    int num1  = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine(" Enter the second number: ");
+                    int num2 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine(" Enter the third number: ");
+                    int num3 = int.Parse(Console.ReadLine());
+
+                    string result2 = largestNumber( num1, num2, num3).ToString() ; 
+                    printValue(result2);
                     break;
 
                 case 3:

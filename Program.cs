@@ -142,6 +142,47 @@ namespace Function_ExercisesPart2
 
             return bill;
         }
+        //-------Simple Calculator (9)--------
+        public static string SimpleCalculator(double num1, double num2, char op)
+        {
+            double result;
+            string message;
+
+            if (op == '+')
+            {
+                result = num1 + num2;
+                message = "\n Your result is:" + result;
+            }
+            else if (op == '-')
+            {
+                result = num1 - num2;
+                message = "\n Your result is:" + result;
+            }
+            else if (op == '/')
+            {
+                if (num2 == 0)
+                {
+                    message = "\n You can not divide by ZERO";
+                }
+                else
+                {
+                    result = num1 / num2;
+                    message = "\n Your result is:" + result;
+                }
+            }
+            else if (op == '*')
+            {
+                result = num1 * num2;
+                message = "\n Your result is:" + result;
+            }
+            else
+            {
+                message = "\n You enter unaccepted operator!";
+            }
+
+            return message;
+        }
+
 
 
         static void Main(string[] args)
@@ -235,7 +276,23 @@ namespace Function_ExercisesPart2
 
                         break;
 
+                    case 9:
 
+                        double num_1, num_2;
+                        char op;
+
+                        Console.WriteLine("Enter your first number:");
+                        num_1 = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter your second number:");
+                        num_2 = double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("\n Enter your operator (+, -, *, /):");
+                        op = char.Parse(Console.ReadLine());
+
+                        string result9 = SimpleCalculator(num_1, num_2, op);
+                        printValue(result9);
+
+                        break;
 
 
 

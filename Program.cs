@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Function_ExercisesPart2
 {
@@ -38,49 +39,59 @@ namespace Function_ExercisesPart2
             }
             return largest;
         }
-        static void Main(string[] args)
+
+        public static double TemperatureConverter(double celsius,double fahrenheit)
         {
-            Console.WriteLine("Welcome to program menu \n 1. Check Even or Odd: \n 2. The Largest number is:  \n 3. Temperature in Fahrenheit: \n" +
-                " 4. the price of the item is: \n 5.The student's grade is:\n 6.Number after swapping:\n 7. Days to Weeks and Days Converter:\n" +
-                " 8. Electricity Bill Calculator is: \n 9. Simple Calculator:   ");
-            int choice = int.Parse(Console.ReadLine());
+           return fahrenheit = (celsius * 9 / 5) + 32;
+        }
 
-            switch (choice)
-            {
-                case 1:
-                    Console.WriteLine("Enter number");
-                    int input = int.Parse(Console.ReadLine());
-                    string result1 = GuessEvemnOrOdd(input);
-                    printValue(result1);
+       
+                static void Main(string[] args)
+                {
+                    Console.WriteLine("Welcome to program menu \n 1. Check Even or Odd: \n 2. The Largest number is:  \n 3. Temperature in Fahrenheit: \n" +
+                        " 4. the price of the item is: \n 5.The student's grade is:\n 6.Number after swapping:\n 7. Days to Weeks and Days Converter:\n" +
+                        " 8. Electricity Bill Calculator is: \n 9. Simple Calculator:   ");
+                    int choice = int.Parse(Console.ReadLine());
 
-                    break;
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter number");
+                            int input = int.Parse(Console.ReadLine());
+                            string result1 = GuessEvemnOrOdd(input);
+                            printValue(result1);
 
-                case 2:
-                    Console.WriteLine(" Enter the first number: ");
-                    int num1  = int.Parse(Console.ReadLine());
+                            break;
 
-                    Console.WriteLine(" Enter the second number: ");
-                    int num2 = int.Parse(Console.ReadLine());
+                        case 2:
+                            Console.WriteLine(" Enter the first number: ");
+                            int num1 = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine(" Enter the third number: ");
-                    int num3 = int.Parse(Console.ReadLine());
+                            Console.WriteLine(" Enter the second number: ");
+                            int num2 = int.Parse(Console.ReadLine());
 
-                    string result2 = largestNumber( num1, num2, num3).ToString() ; 
-                    printValue(result2);
-                    break;
+                            Console.WriteLine(" Enter the third number: ");
+                            int num3 = int.Parse(Console.ReadLine());
 
-                case 3:
-                   
+                            string result2 = largestNumber(num1, num2, num3).ToString();
+                            printValue(result2);
+                            break;
 
-                    break;
-
+                        case 3:
+                            Console.Write("Enter temperature in Celsius: ");
+                            double celsius = double.Parse(Console.ReadLine());
+                            double fahrenheit = double.Parse(Console.ReadLine());
+                            string result3 = TemperatureConverter(celsius, fahrenheit).ToString();
+                            printValue(result3);
+                            break;
+               
                 default:
 
-                    break;
+                            break;
 
 
-            }
+                    }
 
-        }
+                }
     }
 }

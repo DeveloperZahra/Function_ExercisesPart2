@@ -108,7 +108,21 @@ namespace Function_ExercisesPart2
 
             return message;
         }
-       
+
+        //------Days to Weeks and Days Converte (7)------
+        public static string DaysToWeeksAndDaysConverter(int input)
+        {
+            int weeks, days;
+            string message;
+            weeks = input / 7;
+            days = input % 7;
+
+            message = "Then number of weeks you have is:" + weeks +
+                      "\n Then number of days you have is:" + days;
+            return message;
+        }
+
+
         static void Main(string[] args)
         {
             char choice;
@@ -179,7 +193,16 @@ namespace Function_ExercisesPart2
                         string result6 = SwapTwoNumbers(firestnumber, secondnumber).ToString();
                         printValue(result6);
                         break;
+                    case 7:
 
+                        int remainingdays;
+                        Console.WriteLine("Enter your the number of days:");
+                        remainingdays = int.Parse(Console.ReadLine());
+
+                        string result7 = DaysToWeeksAndDaysConverter(remainingdays);
+                        printValue(result7);
+
+                        break;
                     default:
                         Console.WriteLine("Wrong Choice!");
                         break;
